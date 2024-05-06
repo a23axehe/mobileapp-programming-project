@@ -18,12 +18,13 @@ import java.util.ArrayList;
 @SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity implements Json_Task.JsonTaskListener {
     private MyAdapter adapter;
-    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a23axehe";
+    //private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a23axehe";
+    private final String JSON_FILE = "Countries.json";
     private final ArrayList<Country> countries = new ArrayList<>();
 
     private void getJson() {
-        //new Json_File(this, this).execute(JSON_URL);
-        new Json_Task(this).execute(JSON_URL);
+        new Json_File(this, this).execute(JSON_FILE);
+        //new Json_Task(this).execute(JSON_URL);
     }
     public ArrayList<Country> parseJson(String json) {
 
@@ -34,13 +35,12 @@ public class MainActivity extends AppCompatActivity implements Json_Task.JsonTas
                 String id = jsonObject.getString("ID");
                 String name = jsonObject.getString("name");
                 String type = jsonObject.getString("type");
+                String company = jsonObject.getString("company");
                 String location = jsonObject.getString("location");
+                String category = jsonObject.getString("category");
                 int size = jsonObject.getInt("size");
                 int cost = jsonObject.getInt("cost");
-                JSONObject auxData = jsonObject.getJSONObject("auxdata");
-                String wiki = auxData.getString("wiki");
-                String imgUrl = auxData.optString("img", "");
-                Country country = new Country(id, name, type, location, size, cost, wiki, imgUrl);
+                Country country = new Country(id, name, type, company, location, category, size, cost);
                 countries.add(country);
             }
         } catch (JSONException e) {
