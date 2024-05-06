@@ -1,9 +1,11 @@
 
 # Rapport
-
-**Skriv din rapport här!**
-
-_Du kan ta bort all text som finns sedan tidigare_.
+# Skiss/Design-Idé
+Projektet började med att en skiss skapades på hur appen skulle se ut vid slutet av projektet.
+Skissen innehåller en rubrik för att specificera vad de olika JSON-Data i recyclerviewen representerar
+samt JSON-Datan och slutligen en knapp för about aktiviteten.
+![img.png](img.png)
+# Webbtjänst - JSON
 
 ## Följande grundsyn gäller dugga-svar:
 
@@ -14,7 +16,6 @@ _Du kan ta bort all text som finns sedan tidigare_.
 - I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
 
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
 ```
 function errorCallback(error) {
     switch(error.code) {
