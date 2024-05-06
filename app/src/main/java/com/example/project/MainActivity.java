@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements Json_Task.JsonTas
     private final ArrayList<Country> countries = new ArrayList<>();
 
     private void getJson() {
-        new Json_File(this, this).execute(JSON_URL);
+        //new Json_File(this, this).execute(JSON_URL);
+        new Json_Task(this).execute(JSON_URL);
     }
     public ArrayList<Country> parseJson(String json) {
 
