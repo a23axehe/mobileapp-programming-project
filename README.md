@@ -6,6 +6,10 @@ Skissen innehåller en rubrik för att specificera vad de olika JSON-Data i recy
 samt JSON-Datan och slutligen en knapp för about aktiviteten.
 ![img.png](img.png)
 # Webbtjänst - JSON
+Jag valde att skapa data i form av länder där de olika attribut som finns är; ID, Namn, Plats(Kontinent),
+Cost(Gdp i miljarder usd) och Size(km^2). Detta laddades upp mot den admin-länk som fanns listad i canvas.
+# Implementationsexempel
+
 
 ## Följande grundsyn gäller dugga-svar:
 
