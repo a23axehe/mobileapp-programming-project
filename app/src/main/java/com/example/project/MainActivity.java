@@ -67,10 +67,10 @@ public class MainActivity extends AppCompatActivity implements Json_Task.JsonTas
             }
         });
 
-        RecyclerView view = findViewById(R.id.recyclerview1);
-        view.setLayoutManager(new LinearLayoutManager(this));
-        view.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
         getJson();
+
+
         Button secondActivityButton = findViewById(R.id.button);
         secondActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements Json_Task.JsonTas
     @Override
     public void onPostExecute(String json) {
         countries.clear();
-        countries.addAll(parseJson(json));
+        parseJson(json);
         adapter.notifyDataSetChanged();
     }
+
 }
