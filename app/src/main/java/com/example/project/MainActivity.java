@@ -5,7 +5,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +71,15 @@ public class MainActivity extends AppCompatActivity implements Json_Task.JsonTas
         view.setLayoutManager(new LinearLayoutManager(this));
         view.setAdapter(adapter);
         getJson();
+        Button secondActivityButton = findViewById(R.id.button);
+        secondActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start the second activity
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
