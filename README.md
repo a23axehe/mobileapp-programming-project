@@ -40,47 +40,47 @@ fungerar det att skapa en json fil inom projektet istället.
 Figur 1:
 
 public Country(String id, String name, String type, String company, String location, String category, int size, int cost) {
-this.id = id;
-this.name = name;
-this.type = type;
-this.company = company;
-this.location = location;
-this.category = category;
-this.size = size;
-this.cost = cost;
-}
-@Override
-public String toString() {
-return name;
-}
-}
+    this.id = id;
+    this.name = name;
+    this.type = type;
+    this.company = company;
+    this.location = location;
+    this.category = category;
+    this.size = size;
+    this.cost = cost;
+    }
+    @Override
+    public String toString() {
+    return name;
+    }
 
 Figur 2:
 
 private final String JSON_FILE = "Countries.json";
+
 private void getJson() {
-new Json_File(this, this).execute(JSON_FILE);
+    new Json_File(this, this).execute(JSON_FILE);
 }
 
 Figur 3:
 
 try {
-JSONArray jsonArray = new JSONArray(json);
-for (int i = 0; i < jsonArray.length(); i++) {
-JSONObject jsonObject = jsonArray.getJSONObject(i);
-String id = jsonObject.getString("ID");
-String name = jsonObject.getString("name");
-String type = jsonObject.getString("type");
-String company = jsonObject.getString("company");
-String location = jsonObject.getString("location");
-String category = jsonObject.getString("category");
-int size = jsonObject.getInt("size");
-int cost = jsonObject.getInt("cost");
-Country country = new Country(id, name, type, company, location, category, size, cost);
-countries.add(country);
+    JSONArray jsonArray = new JSONArray(json);
+    for (int i = 0; i < jsonArray.length(); i++) {
+    JSONObject jsonObject = jsonArray.getJSONObject(i);
+    String id = jsonObject.getString("ID");
+    String name = jsonObject.getString("name");
+    String type = jsonObject.getString("type");
+    String company = jsonObject.getString("company");
+    String location = jsonObject.getString("location");
+    String category = jsonObject.getString("category");
+    int size = jsonObject.getInt("size");
+    int cost = jsonObject.getInt("cost");
+    Country country = new Country(id, name, type, company, location, category, size, cost);
+    countries.add(country);
 }
 } catch (JSONException e) {
-e.printStackTrace();
+    e.printStackTrace();
 }
 return countries;
 }
@@ -91,10 +91,10 @@ Button secondActivityButton = findViewById(R.id.button);
 secondActivityButton.setOnClickListener(new View.OnClickListener() {
 @Override
 public void onClick(View view) {
-// Start the second activity
-Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-startActivity(intent);
-}
+    // Start the second activity
+    Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+    startActivity(intent);
+    }
 });
 }
 
