@@ -21,13 +21,11 @@ import java.util.ArrayList;
 @SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity implements Json_Task.JsonTaskListener {
     private MyAdapter adapter;
-    //private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a23axehe";
     private final String JSON_FILE = "Countries.json";
     private final ArrayList<Country> countries = new ArrayList<>();
 
     private void getJson() {
         new Json_File(this, this).execute(JSON_FILE);
-        //new Json_Task(this).execute(JSON_URL);
     }
     public ArrayList<Country> parseJson(String json) {
 
