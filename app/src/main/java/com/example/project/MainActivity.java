@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements Json_Task.JsonTas
             e.printStackTrace();
         }
         return countries;
-
     }
 
     @Override
