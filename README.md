@@ -38,6 +38,7 @@ för att hämta JSON-datan. Det fungerade inte i uppgift 5 eller projektet pågr
 fungerar det att skapa en json fil inom projektet istället.
 ## Kodsnuttar
 Figur 1:
+
 public Country(String id, String name, String type, String company, String location, String category, int size, int cost) {
 this.id = id;
 this.name = name;
@@ -55,12 +56,14 @@ return name;
 }
 
 Figur 2:
+
 private final String JSON_FILE = "Countries.json";
 private void getJson() {
 new Json_File(this, this).execute(JSON_FILE);
 }
 
 Figur 3:
+
 try {
 JSONArray jsonArray = new JSONArray(json);
 for (int i = 0; i < jsonArray.length(); i++) {
@@ -83,6 +86,7 @@ return countries;
 }
 
 Figur 4:
+
 Button secondActivityButton = findViewById(R.id.button);
 secondActivityButton.setOnClickListener(new View.OnClickListener() {
 @Override
@@ -95,6 +99,7 @@ startActivity(intent);
 }
 
 Figur 5:
+
 public void showInternalWebPage() { aboutWebView.loadUrl("file:///android_asset/about.html"); }
 ...
 WebViewClient webViewClient = new aboutWebViewClient();
